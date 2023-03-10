@@ -59,7 +59,7 @@ const getAvailableFlora = (terrain: Terrain) => {
                 :key="flora.code"
                 @click="() => pick(flora)"
               >
-                {{ t(`flora.${flora.code}`) }}
+                {{ t(`flora["${flora.code}"]`) }}
               </v-btn>
             </v-expansion-panel-text>
           </v-expansion-panel>

@@ -36,7 +36,7 @@ const flora = computed(() => {
         :value="index"
         @click="emit('gather', [item])"
       >
-        <v-list-item-title>{{ t(`flora.${item.code}`) }}</v-list-item-title>
+        <v-list-item-title>{{ t(`flora["${item.code}"]`) }}</v-list-item-title>
       </v-list-item>
     </v-list>
   </v-menu>
