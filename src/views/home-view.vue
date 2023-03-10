@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import GatherCard from '@/components/gather-attempts.vue'
-import SettingsModal from '@/components/settings-modal.vue'
 import TerrainPicker from '@/components/terrain-picker.vue'
 import { natureCheck } from '@/services/roll'
 import { Terrain } from '@/services/terrain'
@@ -34,7 +33,6 @@ const onPick = (terrain: Terrain, count: number) => {
 </script>
 
 <template>
-  <settings-modal />
   <terrain-picker @pick="onPick" />
 
   <gather-card

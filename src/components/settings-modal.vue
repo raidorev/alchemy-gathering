@@ -11,7 +11,9 @@ const { settings } = useSettingsStore()
 <template>
   <v-dialog transition="dialog-top-transition" width="auto">
     <template #activator="{ props }">
-      <v-btn color="primary" v-bind="props">{{ t('settings.open') }}</v-btn>
+      <v-btn icon v-bind="props">
+        <v-icon>mdi-cog</v-icon>
+      </v-btn>
     </template>
 
     <template #default="{ isActive }">

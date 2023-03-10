@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import LocaleSwitcher from './locale-switcher.vue'
+import SettingsModal from './settings-modal.vue'
 import ThemeSwitcher from './theme-switcher.vue'
 </script>
 
@@ -9,6 +10,10 @@ import ThemeSwitcher from './theme-switcher.vue'
       <v-img
         gradient="to top right, rgba(125, 130, 184, .8), rgba(69, 176, 121, .8)"
       />
+    </template>
+
+    <template #prepend>
+      <settings-modal />
     </template>
 
     <v-app-bar-title>Gather time!</v-app-bar-title>
