@@ -1,0 +1,71 @@
+{
+  "settings": {
+    "open": "Open settings",
+    "title": "Settings",
+    "save": "Save",
+    "close": "Close",
+    "natureCheckModifier": "Intelligence (Nature) modifier",
+    "proficiencyInHerbalismKit": "Proficiency in Herbalism Kit",
+    "favoriteTerrain": "Favorite terrain",
+    "help": "Help"
+  },
+  "terrain": {
+    "Arctic": "Arctic",
+    "Coast": "Coast",
+    "Desert": "Desert",
+    "Forest": "Forest",
+    "Grassland": "Grassland",
+    "Mountain": "Mountain",
+    "Swamp": "Swamp",
+    "Underground": "Underground"
+  },
+  "flora": {
+    "Alchemilla": "Alchemilla",
+    "Alil": "Alil",
+    "Angel skin": "Angel skin",
+    "Arctic root": "Arctic root",
+    "Bittergrass": "Bittergrass",
+    "Blodgrass": "Blodgrass",
+    "Bloodpurge": "Bloodpurge",
+    "Blue lotus flower": "Blue lotus flower",
+    "Darkberry": "Darkberry",
+    "Deadly nightshade": "Deadly nightshade",
+    "Desert aloe": "Desert aloe",
+    "Dragonwort": "Dragonwort",
+    "Ephedra": "Ephedra",
+    "Fairy bells": "Fairy bells",
+    "Fleshwort": "Fleshwort",
+    "Flintmoss": "Flintmoss",
+    "Glowshroom": "Glowshroom",
+    "Juniper berries": "Juniper berries",
+    "Kava root": "Kava root",
+    "Knitbone": "Knitbone",
+    "Lunar holly berries": "Lunar holly berries",
+    "Maiden's tear": "Maiden's tear",
+    "Mistletoe": "Mistletoe",
+    "Red lichen": "Red lichen",
+    "Red mountain flower": "Red mountain flower",
+    "Sabito seeds": "Sabito seeds",
+    "Sand palm seeds": "Sand palm seeds",
+    "Silverleaf sap": "Silverleaf sap",
+    "Sweet elorien": "Sweet elorien",
+    "White magnolia": "White magnolia",
+    "Willow bark": "Willow bark",
+    "Witch hazel": "Witch hazel",
+    "Wizard's fingers": "Wizard's fingers"
+  },
+  "essence": {
+    "Earth": "Earth",
+    "Fire": "Fire",
+    "Air": "Air",
+    "Water": "Water",
+    "Ice": "Ice",
+    "Lightning": "Lightning"
+  },
+  "gatheringVariant": {
+    "flora": "Flora",
+    "essence": "Essence",
+    "rareFlora": "Rare Flora",
+    "rareFloraDifferentTerrain": "Rare Flora (different terrain)"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "vite.config.ts",
+    "vitest.config.ts",
+    ".lintstagedrc.js",
+    ".eslintrc.cjs",
+    "stylelint.config.cjs"
+  ]
+}
