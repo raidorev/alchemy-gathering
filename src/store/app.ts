@@ -7,7 +7,7 @@ export interface IApp {
 }
 
 export const useAppStore = defineStore(
-  'settings',
+  'app',
   () => {
     const app = reactive<IApp>({
       theme: 'light',

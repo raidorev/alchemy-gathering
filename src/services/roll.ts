@@ -26,14 +26,12 @@ export const roll = (options: RollOptions) => {
 }
 
 export const natureCheck = () => {
-  const settings = useSettingsStore()
+  const { settings } = useSettingsStore()
 
-  const advantage =
-    settings.settings.help || settings.settings.proficiencyInHerbalismKit
+  const advantage = settings.help || settings.proficiencyInHerbalismKit
 
   const modifier =
-    settings.settings.natureCheckModifier +
-    (settings.settings.favoriteTerrain ? 2 : 0)
+    settings.natureCheckModifier + (settings.favoriteTerrain ? 2 : 0)
 
   const mode: RollOptions['mode'] = advantage ? 'advantage' : 'normal'
 
