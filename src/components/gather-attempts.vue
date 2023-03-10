@@ -20,34 +20,28 @@ const gather = (newResult: InventoryItem[]) => {
 </script>
 
 <template>
-  <v-container>
-    <v-row>
-      <div>{{ terrain }}: {{ roll }}</div>
-    </v-row>
+  <h4>{{ terrain }}: {{ roll }}</h4>
 
-    <v-row>
-      <template v-if="roll >= 10">
-        <div class="mr-2">
-          <common-flora :roll="roll" @gather="gather" />
-        </div>
+  <div v-if="roll >= 10" class="d-flex flex-wrap">
+    <div class="mr-2 mb-2">
+      <common-flora :roll="roll" @gather="gather" />
+    </div>
 
-        <div class="mr-2">
-          <common-essence :roll="roll" @gather="gather" />
-        </div>
+    <div class="mr-2">
+      <common-essence :roll="roll" @gather="gather" />
+    </div>
 
-        <div class="mr-2">
-          <rare-flora :roll="roll" :terrain="terrain" @gather="gather" />
-        </div>
+    <div class="mr-2">
+      <rare-flora :roll="roll" :terrain="terrain" @gather="gather" />
+    </div>
 
-        <div class="mr-2">
-          <different-terrain :roll="roll" :terrain="terrain" @gather="gather" />
-        </div>
+    <div class="mr-2">
+      <different-terrain :roll="roll" :terrain="terrain" @gather="gather" />
+    </div>
 
-        <div class="bg-grey-lighten-1 d-flex align-center px-2 rounded">
-          {{ result }}
-        </div>
-      </template>
-      <v-alert v-else type="error">Sucker</v-alert>
-    </v-row>
-  </v-container>
+    <div class="bg-grey-lighten-1 d-flex align-center px-2 rounded">
+      {{ result }}
+    </div>
+  </div>
+  <v-alert v-else type="warning">No flora for you :(</v-alert>
 </template>
