@@ -17,6 +17,11 @@ const result = ref<InventoryItem[]>([])
 const gather = (newResult: InventoryItem[]) => {
   result.value = newResult
 }
+
+const formattedResult = (result: InventoryItem[]) => {
+  // TODO: use i18n
+  return result.map((item) => item.code).join(', ')
+}
 </script>
 
 <template>
@@ -35,13 +40,13 @@ const gather = (newResult: InventoryItem[]) => {
       <rare-flora :roll="roll" :terrain="terrain" @gather="gather" />
     </div>
 
-    <div class="mr-2">
+    <div class="mr-2 mb-2">
       <different-terrain :roll="roll" :terrain="terrain" @gather="gather" />
     </div>
 
-    <div class="bg-grey-lighten-1 d-flex align-center px-2 rounded">
-      {{ result }}
-    </div>
+    <v-btn size="small" color="primary" disabled>
+      {{ formattedResult(result) }}
+    </v-btn>
   </div>
   <v-alert v-else type="warning">No flora for you :(</v-alert>
 </template>
