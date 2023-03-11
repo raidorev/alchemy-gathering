@@ -1,15 +1,34 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, RouterOptions } from 'vue-router'
 
-const routes = [
+export enum Tab {
+  Gather = 'Gather',
+  Inventory = 'Inventory',
+}
+
+const routes: RouterOptions['routes'] = [
   {
     path: '/',
     component: () => import('@/layouts/default/default-layout.vue'),
     children: [
       {
         path: '',
-        name: 'Home',
+        redirect: { name: Tab.Gather },
+      },
+      {
+        path: '/gather',
+        name: Tab.Gather,
         component: () =>
-          import(/* webpackChunkName: "home" */ '@/views/home-view.vue'),
+          import(/* webpackChunkName: "home" */ '@/views/gather-view.vue'),
+      },
+      {
+        path: '/inventory',
+        name: Tab.Inventory,
+        component: () =>
+          import(/* webpackChunkName: "home" */ '@/views/inventory-view.vue'),
+      },
+      {
+        path: '/:pathMatch(.*)*',
+        redirect: { name: Tab.Gather },
       },
     ],
   },

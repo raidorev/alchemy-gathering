@@ -1,23 +1,32 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
-import { useAppStore } from '@/store/app'
+import { Tab } from '@/router'
 
-const { app } = useAppStore()
+const route = useRoute()
+const router = useRouter()
+
+const currentTab = computed({
+  get: () => route.name as Tab,
+  set: (value: string) => {
+    router.push({ name: value })
+  },
+})
 
 const color = computed(() => {
-  return app.currentTab === 'gather' ? 'primary' : 'secondary'
+  return currentTab.value === Tab.Gather ? 'primary' : 'secondary'
 })
 </script>
 
 <template>
-  <v-bottom-navigation v-model="app.currentTab" :bg-color="color" mode="shift">
-    <v-btn value="gather">
+  <v-bottom-navigation v-model="currentTab" :bg-color="color" mode="shift">
+    <v-btn :value="Tab.Gather">
       <v-icon>mdi-flower-tulip</v-icon>
       <span>Gathering</span>
     </v-btn>
 
-    <v-btn value="inventory">
+    <v-btn :value="Tab.Inventory">
       <v-icon>mdi-file-table-box-multiple</v-icon>
       <span>Inventory</span>
     </v-btn>

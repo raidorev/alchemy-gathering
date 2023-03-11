@@ -9,5 +9,5 @@ import { loadFonts } from './webfontloader'
 
 export function registerPlugins(app: App) {
   void loadFonts()
-  app.use(i18n).use(vuetify).use(router).use(pinia)
+  app.use(i18n).use(vuetify).use(pinia).use(router)
 }
