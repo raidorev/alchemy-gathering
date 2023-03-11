@@ -23,3 +23,18 @@ export type InventoryItem = (FloraItem | EssenceItem) & {
 }
 
 export const inventory: InventoryItem[] = []
+
+export const getInventoryItemName = (item: InventoryItem) => {
+  // TODO: Fix types
+  const { t } = i18n.global as unknown as { t: (key: string) => string }
+
+  if (item.type === InventoryItemType.Flora) {
+    return t(`flora["${item.code}"]`)
+  }
+
+  if (item.type === InventoryItemType.Essence) {
+    return t(`essence["${item.code}"]`)
+  }
+
+  throw new Error('Unknown item type')
+}

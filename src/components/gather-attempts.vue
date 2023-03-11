@@ -5,7 +5,7 @@ import CommonEssence from '@/components/gather-variants/common-essence.vue'
 import CommonFlora from '@/components/gather-variants/common-flora.vue'
 import DifferentTerrain from '@/components/gather-variants/different-terrain.vue'
 import RareFlora from '@/components/gather-variants/rare-flora.vue'
-import { InventoryItem } from '@/services/inventory'
+import { InventoryItem, getInventoryItemName } from '@/services/inventory'
 import { Terrain } from '@/services/terrain'
 
 defineProps<{
@@ -24,8 +24,7 @@ const formattedResult = (result: InventoryItem[]) => {
     result.reduce((groups, item) => {
       if (!groups[item.code]) {
         groups[item.code] = {
-          // TODO: use i18n
-          name: item.code,
+          name: getInventoryItemName(item),
           count: 0,
         }
       }
@@ -58,9 +57,9 @@ const formattedResult = (result: InventoryItem[]) => {
       </v-col>
 
       <v-col cols="12">
-    <v-alert color="teal" variant="tonal" border="start">
-      {{ formattedResult(result) }}
-    </v-alert>
+        <v-alert color="teal" variant="tonal" border="start">
+          {{ formattedResult(result) }}
+        </v-alert>
       </v-col>
     </v-row>
   </template>
