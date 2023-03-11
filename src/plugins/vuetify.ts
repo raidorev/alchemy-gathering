@@ -7,6 +7,13 @@ import { createVueI18nAdapter } from 'vuetify/locale/adapters/vue-i18n'
 
 import { i18n } from './i18n'
 
+const baseColors = {
+  primary: '#7d82b8',
+  secondary: '#749db8',
+  success: '#45b079',
+  warning: '#eddea4',
+}
+
 export default createVuetify({
   locale: {
     adapter: createVueI18nAdapter({
@@ -18,10 +25,10 @@ export default createVuetify({
   theme: {
     themes: {
       light: {
-        colors: {
-          primary: '#7d82b8',
-          success: '#45b079',
-        },
+        colors: { ...baseColors },
+      },
+      dark: {
+        colors: { ...baseColors },
       },
     },
   },

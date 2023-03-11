@@ -23,7 +23,7 @@ const gather = () => {
 </script>
 
 <template>
-  <v-btn size="small" color="success" @click="gather">
+  <v-btn block size="small" color="secondary" @click="gather">
     {{ t('gatheringVariant.essence') }}
   </v-btn>
 </template>

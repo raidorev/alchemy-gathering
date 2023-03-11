@@ -25,7 +25,13 @@ const flora = computed(() => {
 <template>
   <v-menu>
     <template #activator="{ props }">
-      <v-btn size="small" color="primary" v-bind="props" :disabled="roll < 15">
+      <v-btn
+        block
+        size="small"
+        color="primary"
+        v-bind="props"
+        :disabled="roll < 15"
+      >
         {{ t('gatheringVariant.rareFlora') }}
       </v-btn>
     </template>

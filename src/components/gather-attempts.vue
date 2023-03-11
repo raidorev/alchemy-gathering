@@ -19,34 +19,51 @@ const gather = (newResult: InventoryItem[]) => {
 }
 
 const formattedResult = (result: InventoryItem[]) => {
-  // TODO: use i18n
-  return result.map((item) => item.code).join(', ')
+  const items = Object.values(
+    // eslint-disable-next-line unicorn/no-array-reduce
+    result.reduce((groups, item) => {
+      if (!groups[item.code]) {
+        groups[item.code] = {
+          // TODO: use i18n
+          name: item.code,
+          count: 0,
+        }
+      }
+      groups[item.code].count += 1
+      return groups
+    }, {} as Record<InventoryItem['code'], { name: string; count: 0 }>),
+  )
+
+  return items.map((item) => `${item.count}x ${item.name}`).join(', ')
 }
 </script>
 
 <template>
-  <h4>{{ terrain }}: {{ roll }}</h4>
+  <h4 class="d-flex align-center my-2">Result: {{ roll }}</h4>
 
-  <div v-if="roll >= 10" class="d-flex flex-wrap">
-    <div class="mr-2 mb-2">
-      <common-flora :roll="roll" @gather="gather" />
-    </div>
+  <template v-if="roll >= 10">
+    <v-row dense>
+      <v-col>
+        <common-flora :roll="roll" @gather="gather" />
+      </v-col>
+      <v-col>
+        <common-essence :roll="roll" @gather="gather" />
+      </v-col>
+      <v-col>
+        <rare-flora :roll="roll" :terrain="terrain" @gather="gather" />
+      </v-col>
 
-    <div class="mr-2">
-      <common-essence :roll="roll" @gather="gather" />
-    </div>
+      <v-col>
+        <different-terrain :roll="roll" :terrain="terrain" @gather="gather" />
+      </v-col>
 
-    <div class="mr-2">
-      <rare-flora :roll="roll" :terrain="terrain" @gather="gather" />
-    </div>
-
-    <div class="mr-2 mb-2">
-      <different-terrain :roll="roll" :terrain="terrain" @gather="gather" />
-    </div>
-
-    <v-btn size="small" color="primary" disabled>
+      <v-col cols="12">
+    <v-alert color="teal" variant="tonal" border="start">
       {{ formattedResult(result) }}
-    </v-btn>
-  </div>
-  <v-alert v-else type="warning">No flora for you :(</v-alert>
+    </v-alert>
+      </v-col>
+    </v-row>
+  </template>
+
+  <v-alert v-else type="warning">No items for you :(</v-alert>
 </template>

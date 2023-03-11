@@ -44,7 +44,9 @@ const onSubmit = () => {
 
       <v-col cols="12" md="4">
         <div class="d-flex h-100 align-center">
-          <v-btn color="primary" type="submit" :disabled="!valid">Submit</v-btn>
+          <v-btn color="primary" type="submit" block :disabled="!valid">
+            Make attempts
+          </v-btn>
         </div>
       </v-col>
     </v-row>

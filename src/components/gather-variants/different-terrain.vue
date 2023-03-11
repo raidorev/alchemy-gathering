@@ -36,7 +36,13 @@ const getAvailableFlora = (terrain: Terrain) => {
 <template>
   <v-dialog v-model="isActive" transition="dialog-bottom-transition">
     <template #activator="{ props }">
-      <v-btn size="small" color="primary" v-bind="props" :disabled="roll < 20">
+      <v-btn
+        block
+        size="small"
+        color="primary"
+        v-bind="props"
+        :disabled="roll < 20"
+      >
         {{ t('gatheringVariant.rareFloraDifferentTerrain') }}
       </v-btn>
     </template>
@@ -54,13 +60,18 @@ const getAvailableFlora = (terrain: Terrain) => {
             :title="t(`terrain.${terrain}`)"
           >
             <v-expansion-panel-text>
-              <v-btn
-                v-for="flora in getAvailableFlora(terrain)"
-                :key="flora.code"
-                @click="() => pick(flora)"
-              >
-                {{ t(`flora["${flora.code}"]`) }}
-              </v-btn>
+              <div class="d-flex flex-wrap">
+                <v-btn
+                  v-for="flora in getAvailableFlora(terrain)"
+                  :key="flora.code"
+                  class="mr-1 mb-1"
+                  color="secondary"
+                  size="small"
+                  @click="() => pick(flora)"
+                >
+                  {{ t(`flora["${flora.code}"]`) }}
+                </v-btn>
+              </div>
             </v-expansion-panel-text>
           </v-expansion-panel>
         </v-expansion-panels>
