@@ -36,7 +36,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## TODO
 
-- [ ] PWA support
 - [ ] Inventory management
 - [ ] Inventory import/export
+- [ ] PWA support
 - [ ] "Smart" ingredient gathering based on inventory and recipes
+- [ ] Full russian translation
