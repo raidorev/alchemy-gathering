@@ -42,5 +42,5 @@ const onPick = (terrain: Terrain, count: number) => {
     </template>
   </div>
 
-  <v-btn color="success">{{ t('gahter') }}</v-btn>
+  <v-btn block color="success">{{ t('gahter') }}</v-btn>
 </template>
