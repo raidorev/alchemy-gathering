@@ -71,7 +71,7 @@ const getAvailableFlora = (terrain: Terrain) => {
                     size="small"
                     @click="() => pick(flora)"
                   >
-                    {{ t(`flora["${flora.code}"]`) }}
+                    {{ t(`floras["${flora.code}"]`) }}
                   </v-btn>
                 </v-col>
               </v-row>

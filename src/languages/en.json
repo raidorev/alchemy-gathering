@@ -1,6 +1,13 @@
 {
+  "languages": "Languages",
+  "navigation": {
+    "inventory": "Inventory",
+    "gathering": "Gathering"
+  },
+  "appBar": {
+    "title": "Gather time!"
+  },
   "settings": {
-    "open": "Open settings",
     "title": "Settings",
     "save": "Save",
     "close": "Close",
@@ -9,7 +16,16 @@
     "favoriteTerrain": "Favorite terrain",
     "help": "Help"
   },
-  "terrain": {
+  "terrainPicker": {
+    "makeAttempts": "Make attempts"
+  },
+  "gather": "Gather",
+  "gatherAttempt": {
+    "result": "Result: {roll}",
+    "nothingFound": "No items for you :("
+  },
+  "terrain": "Terrain",
+  "terrains": {
     "Arctic": "Arctic",
     "Coast": "Coast",
     "Desert": "Desert",
@@ -19,7 +35,8 @@
     "Swamp": "Swamp",
     "Underground": "Underground"
   },
-  "flora": {
+  "flora": "Flora",
+  "floras": {
     "Alchemilla": "Alchemilla",
     "Alil": "Alil",
     "Angel skin": "Angel skin",
@@ -54,7 +71,8 @@
     "Witch hazel": "Witch hazel",
     "Wizard's fingers": "Wizard's fingers"
   },
-  "essence": {
+  "essence": "Essence",
+  "essences": {
     "Earth": "Earth",
     "Fire": "Fire",
     "Air": "Air",

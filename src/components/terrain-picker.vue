@@ -14,7 +14,7 @@ const valid = ref(false)
 
 const items = terrains.map((terrain) => ({
   id: terrain,
-  key: t(`terrain.${terrain}`),
+  key: t(`terrains.${terrain}`),
 }))
 
 const terrain = ref(terrains[0])
@@ -45,7 +45,7 @@ const onSubmit = () => {
       <v-col cols="12" md="4">
         <div class="d-flex h-100 align-center">
           <v-btn color="primary" type="submit" block :disabled="!valid">
-            Make attempts
+            {{ t('terrainPicker.makeAttempts') }}
           </v-btn>
         </div>
       </v-col>

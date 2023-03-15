@@ -1,8 +1,11 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 
 import { Tab } from '@/router'
+
+const { t } = useI18n()
 
 const route = useRoute()
 const router = useRouter()
@@ -23,12 +26,12 @@ const color = computed(() => {
   <v-bottom-navigation v-model="currentTab" :bg-color="color" mode="shift">
     <v-btn :value="Tab.Gather">
       <v-icon>mdi-flower-tulip</v-icon>
-      <span>Gathering</span>
+      <span>{{ t('navigation.gathering') }}</span>
     </v-btn>
 
     <v-btn :value="Tab.Inventory">
       <v-icon>mdi-file-table-box-multiple</v-icon>
-      <span>Inventory</span>
+      <span>{{ t('navigation.inventory') }}</span>
     </v-btn>
   </v-bottom-navigation>
 </template>

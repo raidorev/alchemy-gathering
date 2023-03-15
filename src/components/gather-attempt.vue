@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 import CommonEssence from '@/components/gather-variants/common-essence.vue'
 import CommonFlora from '@/components/gather-variants/common-flora.vue'
@@ -15,6 +16,8 @@ defineProps<{
 const emit = defineEmits<{
   (event: 'gather', items: InventoryItem[]): void
 }>()
+
+const { t } = useI18n()
 
 const result = ref<InventoryItem[]>([])
 const gather = (newResult: InventoryItem[]) => {
@@ -42,7 +45,9 @@ const formattedResult = (result: InventoryItem[]) => {
 </script>
 
 <template>
-  <h4 class="d-flex align-center my-2">Result: {{ roll }}</h4>
+  <h4 class="d-flex align-center my-2">
+    {{ t('gatherAttempt.result', { roll }) }}
+  </h4>
 
   <template v-if="roll >= 10">
     <v-row dense>
@@ -70,5 +75,7 @@ const formattedResult = (result: InventoryItem[]) => {
     </v-row>
   </template>
 
-  <v-alert v-else type="warning">No items for you :(</v-alert>
+  <v-alert v-else type="warning">
+    {{ t('gatherAttempt.nothingFound') }}
+  </v-alert>
 </template>

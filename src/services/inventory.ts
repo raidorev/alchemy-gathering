@@ -29,11 +29,11 @@ export const getInventoryItemName = (item: InventoryItem) => {
   const { t } = i18n.global as unknown as { t: (key: string) => string }
 
   if (item.type === InventoryItemType.Flora) {
-    return t(`flora["${item.code}"]`)
+    return t(`floras["${item.code}"]`)
   }
 
   if (item.type === InventoryItemType.Essence) {
-    return t(`essence["${item.code}"]`)
+    return t(`essences["${item.code}"]`)
   }
 
   throw new Error('Unknown item type')

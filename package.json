@@ -19,6 +19,7 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
+    "@intlify/eslint-plugin-vue-i18n": "^2.0.0",
     "@raidorev/eslint-config": "^2.0.0",
     "@types/lodash-es": "^4.17.6",
     "@types/node": "^18.14.6",

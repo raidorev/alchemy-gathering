@@ -1,7 +1,11 @@
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n'
+
 import LocaleSwitcher from './locale-switcher.vue'
 import SettingsModal from './settings-modal.vue'
 import ThemeSwitcher from './theme-switcher.vue'
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -16,7 +20,7 @@ import ThemeSwitcher from './theme-switcher.vue'
       <settings-modal />
     </template>
 
-    <v-app-bar-title>Gather time!</v-app-bar-title>
+    <v-app-bar-title>{{ t('appBar.title') }}</v-app-bar-title>
 
     <theme-switcher />
     <locale-switcher />
