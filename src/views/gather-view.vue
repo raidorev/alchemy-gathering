@@ -47,7 +47,7 @@ const gather = () => {
       <gather-attempt
         :terrain="attempt.terrain"
         :roll="attempt.roll"
-        @click="attempt.items = $event"
+        @gather="attempt.items = $event"
       />
     </template>
   </div>
