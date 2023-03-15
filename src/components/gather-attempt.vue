@@ -12,10 +12,14 @@ defineProps<{
   roll: number
   terrain: Terrain
 }>()
+const emit = defineEmits<{
+  (event: 'gather', items: InventoryItem[]): void
+}>()
 
 const result = ref<InventoryItem[]>([])
 const gather = (newResult: InventoryItem[]) => {
   result.value = newResult
+  emit('gather', newResult)
 }
 
 const formattedResult = (result: InventoryItem[]) => {
@@ -45,9 +49,11 @@ const formattedResult = (result: InventoryItem[]) => {
       <v-col>
         <common-flora :roll="roll" @gather="gather" />
       </v-col>
+
       <v-col>
         <common-essence :roll="roll" @gather="gather" />
       </v-col>
+
       <v-col>
         <rare-flora :roll="roll" :terrain="terrain" @gather="gather" />
       </v-col>

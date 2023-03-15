@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import GatherAttempts from '@/components/gather-attempts.vue'
+import GatherAttempt from '@/components/gather-attempt.vue'
 import TerrainPicker from '@/components/terrain-picker.vue'
 import { natureCheck } from '@/services/roll'
 import { Terrain } from '@/services/terrain'
@@ -38,7 +38,7 @@ const onPick = (terrain: Terrain, count: number) => {
   <div class="my-5">
     <template v-for="attempt in results" :key="attempt.key">
       <hr class="mt-2" />
-      <gather-attempts :terrain="attempt.terrain" :roll="attempt.roll" />
+      <gather-attempt :terrain="attempt.terrain" :roll="attempt.roll" />
     </template>
   </div>
 
