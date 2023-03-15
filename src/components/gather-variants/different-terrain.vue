@@ -60,18 +60,21 @@ const getAvailableFlora = (terrain: Terrain) => {
             :title="t(`terrain.${terrain}`)"
           >
             <v-expansion-panel-text>
-              <div class="d-flex flex-wrap">
-                <v-btn
+              <v-row dense>
+                <v-col
                   v-for="flora in getAvailableFlora(terrain)"
                   :key="flora.code"
-                  class="mr-1 mb-1"
-                  color="secondary"
-                  size="small"
-                  @click="() => pick(flora)"
                 >
-                  {{ t(`flora["${flora.code}"]`) }}
-                </v-btn>
-              </div>
+                  <v-btn
+                    block
+                    color="secondary"
+                    size="small"
+                    @click="() => pick(flora)"
+                  >
+                    {{ t(`flora["${flora.code}"]`) }}
+                  </v-btn>
+                </v-col>
+              </v-row>
             </v-expansion-panel-text>
           </v-expansion-panel>
         </v-expansion-panels>
