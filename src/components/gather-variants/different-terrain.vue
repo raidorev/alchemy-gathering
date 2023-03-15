@@ -43,15 +43,12 @@ const getAvailableFlora = (terrain: Terrain) => {
         v-bind="props"
         :disabled="roll < 20"
       >
-        {{ t('gatheringVariant.rareFloraDifferentTerrain') }}
+        {{ t('rareFloraDifferentTerrain') }}
       </v-btn>
     </template>
 
     <v-card>
-      <v-toolbar
-        color="primary"
-        :title="t('gatheringVariant.rareFloraDifferentTerrain')"
-      />
+      <v-toolbar color="primary" :title="t('rareFloraDifferentTerrain')" />
       <v-card-text>
         <v-expansion-panels variant="accordion">
           <v-expansion-panel
@@ -82,3 +79,9 @@ const getAvailableFlora = (terrain: Terrain) => {
     </v-card>
   </v-dialog>
 </template>
+
+<i18n lang="json" locale="en">
+{
+  "rareFloraDifferentTerrain": "Rare Flora (different terrain)"
+}
+</i18n>

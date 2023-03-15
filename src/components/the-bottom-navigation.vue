@@ -26,12 +26,19 @@ const color = computed(() => {
   <v-bottom-navigation v-model="currentTab" :bg-color="color" mode="shift">
     <v-btn :value="Tab.Gather">
       <v-icon>mdi-flower-tulip</v-icon>
-      <span>{{ t('navigation.gathering') }}</span>
+      <span>{{ t('gathering') }}</span>
     </v-btn>
 
     <v-btn :value="Tab.Inventory">
       <v-icon>mdi-file-table-box-multiple</v-icon>
-      <span>{{ t('navigation.inventory') }}</span>
+      <span>{{ t('inventory') }}</span>
     </v-btn>
   </v-bottom-navigation>
 </template>
+
+<i18n lang="json" locale="en">
+{
+  "gathering": "Gathering",
+  "inventory": "Inventory"
+}
+</i18n>

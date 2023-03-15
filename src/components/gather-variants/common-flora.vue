@@ -24,6 +24,12 @@ const gather = () => {
 
 <template>
   <v-btn block size="small" color="success" @click="gather">
-    {{ t('gatheringVariant.flora') }}
+    {{ t('flora') }}
   </v-btn>
 </template>
+
+<i18n lang="json" locale="en">
+{
+  "flora": "Flora"
+}
+</i18n>

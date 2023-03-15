@@ -45,10 +45,16 @@ const onSubmit = () => {
       <v-col cols="12" md="4">
         <div class="d-flex h-100 align-center">
           <v-btn color="primary" type="submit" block :disabled="!valid">
-            {{ t('terrainPicker.makeAttempts') }}
+            {{ t('makeAttempts') }}
           </v-btn>
         </div>
       </v-col>
     </v-row>
   </v-form>
 </template>
+
+<i18n lang="json" locale="en">
+{
+  "makeAttempts": "Make Attempts"
+}
+</i18n>

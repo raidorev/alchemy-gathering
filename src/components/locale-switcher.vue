@@ -48,3 +48,9 @@ watch(
     </v-list>
   </v-menu>
 </template>
+
+<i18n lang="json" locale="en">
+{
+  "languages": "Languages"
+}
+</i18n>

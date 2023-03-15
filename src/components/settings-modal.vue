@@ -19,32 +19,32 @@ const { settings } = useSettingsStore()
     <template #default="{ isActive }">
       <v-card>
         <v-card-title>
-          {{ t('settings.title') }}
+          {{ t('title') }}
         </v-card-title>
 
         <v-card-text>
           <v-text-field
             v-model.number="settings.natureCheckModifier"
             type="number"
-            :label="t('settings.natureCheckModifier')"
+            :label="t('natureCheckModifier')"
             color="primary"
             hide-details
           />
           <v-switch
             v-model="settings.proficiencyInHerbalismKit"
-            :label="t('settings.proficiencyInHerbalismKit')"
+            :label="t('proficiencyInHerbalismKit')"
             color="primary"
             hide-details
           />
           <v-switch
             v-model="settings.help"
-            :label="t('settings.help')"
+            :label="t('help')"
             color="primary"
             hide-details
           />
           <v-switch
             v-model="settings.favoriteTerrain"
-            :label="t('settings.favoriteTerrain')"
+            :label="t('favoriteTerrain')"
             color="primary"
             hide-details
           />
@@ -53,10 +53,22 @@ const { settings } = useSettingsStore()
         <v-card-actions>
           <v-spacer />
           <v-btn variant="text" @click="isActive.value = false">
-            {{ t('settings.close') }}
+            {{ t('close') }}
           </v-btn>
         </v-card-actions>
       </v-card>
     </template>
   </v-dialog>
 </template>
+
+<i18n lang="json" locale="en">
+{
+  "title": "Settings",
+  "save": "Save",
+  "close": "Close",
+  "natureCheckModifier": "Intelligence (Nature) modifier",
+  "proficiencyInHerbalismKit": "Proficiency in Herbalism Kit",
+  "favoriteTerrain": "Favorite terrain",
+  "help": "Help"
+}
+</i18n>

@@ -20,9 +20,15 @@ const { t } = useI18n()
       <settings-modal />
     </template>
 
-    <v-app-bar-title>{{ t('appBar.title') }}</v-app-bar-title>
+    <v-app-bar-title>{{ t('title') }}</v-app-bar-title>
 
     <theme-switcher />
     <locale-switcher />
   </v-app-bar>
 </template>
+
+<i18n lang="json" locale="en">
+{
+  "title": "Gather time!"
+}
+</i18n>

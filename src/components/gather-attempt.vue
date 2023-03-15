@@ -46,7 +46,7 @@ const formattedResult = (result: InventoryItem[]) => {
 
 <template>
   <h4 class="d-flex align-center my-2">
-    {{ t('gatherAttempt.result', { roll }) }}
+    {{ t('result', { roll }) }}
   </h4>
 
   <template v-if="roll >= 10">
@@ -76,6 +76,13 @@ const formattedResult = (result: InventoryItem[]) => {
   </template>
 
   <v-alert v-else type="warning">
-    {{ t('gatherAttempt.nothingFound') }}
+    {{ t('nothingFound') }}
   </v-alert>
 </template>
+
+<i18n lang="json" locale="en">
+{
+  "result": "Result: {roll}",
+  "nothingFound": "No items for you :("
+}
+</i18n>

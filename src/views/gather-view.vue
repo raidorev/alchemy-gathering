@@ -54,3 +54,9 @@ const gather = () => {
 
   <v-btn block color="success" @click="gather">{{ t('gather') }}</v-btn>
 </template>
+
+<i18n lang="json" locale="en">
+{
+  "gather": "Gather"
+}
+</i18n>

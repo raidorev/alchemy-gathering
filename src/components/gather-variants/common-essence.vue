@@ -24,6 +24,12 @@ const gather = () => {
 
 <template>
   <v-btn block size="small" color="secondary" @click="gather">
-    {{ t('gatheringVariant.essence') }}
+    {{ t('essence') }}
   </v-btn>
 </template>
+
+<i18n lang="json" locale="en">
+{
+  "essence": "Essence"
+}
+</i18n>
