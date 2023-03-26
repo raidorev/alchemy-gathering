@@ -48,6 +48,10 @@ export const commonFloraNames: FloraName[] = [
   'willowBark',
 ]
 
+export const rareFloraNames: FloraName[] = allFloraNames.filter(
+  (flora) => !commonFloraNames.includes(flora),
+)
+
 export const commonFlora: InventoryItem[] = commonFloraNames.map(
   (code): InventoryItem => ({
     code,
