@@ -18,9 +18,7 @@ const { settings } = useSettingsStore()
 
     <template #default="{ isActive }">
       <v-card>
-        <v-card-title>
-          {{ t('title') }}
-        </v-card-title>
+        <v-toolbar color="primary" :title="t('title')"></v-toolbar>
 
         <v-card-text>
           <v-text-field
