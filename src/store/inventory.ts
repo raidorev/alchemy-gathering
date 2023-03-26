@@ -12,6 +12,16 @@ export const useInventoryStore = defineStore(
   () => {
     const inventory = ref<InventoryItem[]>([])
 
+    const getGrouped = (code: InventoryItem['code']) =>
+      computed(() => {
+        const items = inventory.value.filter((item) => item.code === code)
+
+        return {
+          code,
+          count: items.length,
+        }
+      })
+
     const remove = (code: InventoryItem['code'], count = 1) => {
       while (count > 0) {
         const index = inventory.value.findIndex((item) => item.code === code)
@@ -22,24 +32,16 @@ export const useInventoryStore = defineStore(
       }
     }
 
-    const inventoryGrouppedByCode = computed(() => {
-      const groups = new Map<InventoryItem['code'], { count: number }>()
+    const clear = () => {
+      inventory.value = []
+    }
 
-      for (const item of inventory.value.sort((a, b) =>
-        a.code.localeCompare(b.code),
-      )) {
-        const group = groups.get(item.code)
-        if (group) {
-          group.count++
-        } else {
-          groups.set(item.code, { count: 1 })
-        }
-      }
-
-      return groups
-    })
-
-    return { inventory, remove, inventoryGrouppedByCode }
+    return {
+      inventory,
+      getGrouped,
+      remove,
+      clear,
+    }
   },
   {
     persist: true,
