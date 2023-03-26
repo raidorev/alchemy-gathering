@@ -8,6 +8,15 @@ export type EssenceName =
   | 'ice'
   | 'lightning'
 
+export const essenceCodes: EssenceName[] = [
+  'earth',
+  'fire',
+  'air',
+  'water',
+  'ice',
+  'lightning',
+]
+
 export const essences: InventoryItem[] = [
   {
     code: 'earth',
