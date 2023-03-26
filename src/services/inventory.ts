@@ -1,7 +1,7 @@
 import { i18n } from '@/plugins/i18n'
 
-import { EssenceName } from './essence'
-import { FloraName } from './flora'
+import { essences, EssenceName } from './essence'
+import { allFlora, FloraName } from './flora'
 
 export enum InventoryItemType {
   Flora = 'Flora',
@@ -57,4 +57,25 @@ export function getInventoryItemName(
   }
 
   throw new Error('Unknown item type')
+}
+
+export const createItem = (
+  code: InventoryItem['code'],
+  type: InventoryItemType,
+): InventoryItem => {
+  let items: InventoryItem[]
+  if (type === InventoryItemType.Flora) {
+    items = allFlora
+  } else if (type === InventoryItemType.Essence) {
+    items = essences
+  } else {
+    throw new Error(`Unknown item type: ${type}`)
+  }
+
+  const item = items.find((item) => item.code === code)
+  if (!item) {
+    throw new Error(`Unknown item: ${code}`)
+  }
+
+  return item
 }

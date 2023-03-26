@@ -254,3 +254,5 @@ export const rareFlora: Record<Terrain, InventoryItem[]> = {
   [Terrain.Swamp]: swampFlora,
   [Terrain.Underground]: undergroundFlora,
 }
+
+export const allFlora = [...commonFlora, ...Object.values(rareFlora).flat()]

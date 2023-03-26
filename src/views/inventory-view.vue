@@ -63,11 +63,19 @@ const groups = [
                 density="compact"
                 icon
                 color="error"
-                class="mr-2"
+                class="me-2"
                 :disabled="count === 0"
                 @click="inventoryStore.remove(code)"
               >
                 <v-icon>mdi-minus</v-icon>
+              </v-btn>
+              <v-btn
+                density="compact"
+                icon
+                color="success"
+                @click="inventoryStore.add(code, type)"
+              >
+                <v-icon>mdi-plus</v-icon>
               </v-btn>
             </div>
           </td>
