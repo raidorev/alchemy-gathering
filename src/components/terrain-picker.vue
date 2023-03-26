@@ -9,12 +9,13 @@ const emit = defineEmits<{
 }>()
 
 const { t } = useI18n()
+const { t: T } = useI18n({ useScope: 'global' })
 
 const valid = ref(false)
 
 const items = terrains.map((terrain) => ({
   id: terrain,
-  key: t(`terrains.${terrain}`),
+  key: T(`terrains.${terrain}`),
 }))
 
 const terrain = ref(terrains[0])
@@ -55,6 +56,6 @@ const onSubmit = () => {
 
 <i18n lang="json" locale="en">
 {
-  "makeAttempts": "Make Attempts"
+  "makeAttempts": "Make attempts"
 }
 </i18n>

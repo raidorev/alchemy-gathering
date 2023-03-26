@@ -2,50 +2,50 @@ import { InventoryItem, InventoryItemType } from './inventory'
 import { Terrain } from './terrain'
 
 const allFloraNames = [
-  'Alchemilla',
-  'Alil',
-  'Angel skin',
-  'Arctic root',
-  'Bittergrass',
-  'Blodgrass',
-  'Bloodpurge',
-  'Blue lotus flower',
-  'Darkberry',
-  'Deadly nightshade',
-  'Desert aloe',
-  'Dragonwort',
-  'Ephedra',
-  'Fairy bells',
-  'Fleshwort',
-  'Flintmoss',
-  'Glowshroom',
-  'Juniper berries',
-  'Kava root',
-  'Knitbone',
-  'Lunar holly berries',
-  "Maiden's tear",
-  'Mistletoe',
-  'Red lichen',
-  'Red mountain flower',
-  'Sabito seeds',
-  'Sand palm seeds',
-  'Silverleaf sap',
-  'Sweet elorien',
-  'White magnolia',
-  'Willow bark',
-  'Witch hazel',
-  "Wizard's fingers",
+  'alchemilla',
+  'alil',
+  'angelSkin',
+  'arcticRoot',
+  'bittergrass',
+  'blodgrass',
+  'bloodpurge',
+  'blueLotusFlower',
+  'darkberry',
+  'deadlyNightshade',
+  'desertAloe',
+  'dragonwort',
+  'ephedra',
+  'fairyBells',
+  'fleshwort',
+  'flintmoss',
+  'glowshroom',
+  'juniperBerries',
+  'kavaRoot',
+  'knitbone',
+  'lunarHollyBerries',
+  'maidensTear',
+  'mistletoe',
+  'redLichen',
+  'redMountainFlower',
+  'sabitoSeeds',
+  'sandPalmSeeds',
+  'silverleafSap',
+  'sweetElorien',
+  'whiteMagnolia',
+  'willowBark',
+  'witchHazel',
+  'wizardsFingers',
 ] as const
 
 export type FloraName = (typeof allFloraNames)[number]
 
 export const commonFloraNames: FloraName[] = [
-  'Alchemilla',
-  'Deadly nightshade',
-  'Ephedra',
-  'Fleshwort',
-  'Juniper berries',
-  'Willow bark',
+  'alchemilla',
+  'deadlyNightshade',
+  'ephedra',
+  'fleshwort',
+  'juniperBerries',
+  'willowBark',
 ]
 
 export const commonFlora: InventoryItem[] = commonFloraNames.map(
@@ -58,22 +58,22 @@ export const commonFlora: InventoryItem[] = commonFloraNames.map(
 
 const arcticFlora: InventoryItem[] = [
   {
-    code: 'Arctic root',
+    code: 'arcticRoot',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 15,
   },
   {
-    code: 'Mistletoe',
+    code: 'mistletoe',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 15,
   },
   {
-    code: 'Silverleaf sap',
+    code: 'silverleafSap',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 20,
   },
   {
-    code: 'Alil',
+    code: 'alil',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 25,
   },
@@ -81,22 +81,22 @@ const arcticFlora: InventoryItem[] = [
 
 const coastFlora: InventoryItem[] = [
   {
-    code: 'Red lichen',
+    code: 'redLichen',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 15,
   },
   {
-    code: 'Sabito seeds',
+    code: 'sabitoSeeds',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 15,
   },
   {
-    code: 'Flintmoss',
+    code: 'flintmoss',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 20,
   },
   {
-    code: 'Blue lotus flower',
+    code: 'blueLotusFlower',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 25,
   },
@@ -104,22 +104,22 @@ const coastFlora: InventoryItem[] = [
 
 const desertFlora: InventoryItem[] = [
   {
-    code: 'Desert aloe',
+    code: 'desertAloe',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 15,
   },
   {
-    code: 'Sand palm seeds',
+    code: 'sandPalmSeeds',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 15,
   },
   {
-    code: 'Bittergrass',
+    code: 'bittergrass',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 20,
   },
   {
-    code: 'White magnolia',
+    code: 'whiteMagnolia',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 25,
   },
@@ -127,22 +127,22 @@ const desertFlora: InventoryItem[] = [
 
 const forestFlora: InventoryItem[] = [
   {
-    code: 'Kava root',
+    code: 'kavaRoot',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 15,
   },
   {
-    code: 'Mistletoe',
+    code: 'mistletoe',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 15,
   },
   {
-    code: 'Lunar holly berries',
+    code: 'lunarHollyBerries',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 20,
   },
   {
-    code: 'Darkberry',
+    code: 'darkberry',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 25,
   },
@@ -150,22 +150,22 @@ const forestFlora: InventoryItem[] = [
 
 const grasslandFlora: InventoryItem[] = [
   {
-    code: 'Blodgrass',
+    code: 'blodgrass',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 15,
   },
   {
-    code: 'Fairy bells',
+    code: 'fairyBells',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 15,
   },
   {
-    code: 'Witch hazel',
+    code: 'witchHazel',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 20,
   },
   {
-    code: 'White magnolia',
+    code: 'whiteMagnolia',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 25,
   },
@@ -173,22 +173,22 @@ const grasslandFlora: InventoryItem[] = [
 
 const mountainFlora: InventoryItem[] = [
   {
-    code: 'Dragonwort',
+    code: 'dragonwort',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 15,
   },
   {
-    code: 'Sweet elorien',
+    code: 'sweetElorien',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 15,
   },
   {
-    code: 'Red mountain flower',
+    code: 'redMountainFlower',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 20,
   },
   {
-    code: "Maiden's tear",
+    code: 'maidensTear',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 25,
   },
@@ -196,22 +196,22 @@ const mountainFlora: InventoryItem[] = [
 
 const swampFlora: InventoryItem[] = [
   {
-    code: 'Bloodpurge',
+    code: 'bloodpurge',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 15,
   },
   {
-    code: "Wizard's fingers",
+    code: 'wizardsFingers',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 15,
   },
   {
-    code: 'Knitbone',
+    code: 'knitbone',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 20,
   },
   {
-    code: "Maiden's tear",
+    code: 'maidensTear',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 25,
   },
@@ -219,22 +219,22 @@ const swampFlora: InventoryItem[] = [
 
 const undergroundFlora: InventoryItem[] = [
   {
-    code: 'Glowshroom',
+    code: 'glowshroom',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 15,
   },
   {
-    code: "Wizard's fingers",
+    code: 'wizardsFingers',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 15,
   },
   {
-    code: 'Flintmoss',
+    code: 'flintmoss',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 20,
   },
   {
-    code: 'Angel skin',
+    code: 'angelSkin',
     type: InventoryItemType.Flora,
     baseDifficultyClass: 25,
   },

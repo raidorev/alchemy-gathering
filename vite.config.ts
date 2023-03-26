@@ -1,4 +1,3 @@
-import { dirname, resolve } from 'node:path'
 import { fileURLToPath, URL } from 'node:url'
 
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
@@ -12,11 +11,7 @@ export default defineConfig({
       template: { transformAssetUrls },
     }),
     VueI18nPlugin({
-      include: [
-        resolve(
-          dirname(fileURLToPath(new URL('src/locales', import.meta.url))),
-        ),
-      ],
+      include: [fileURLToPath(new URL('src/languages/**', import.meta.url))],
     }),
     vuetify({
       autoImport: true,

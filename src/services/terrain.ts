@@ -1,12 +1,12 @@
 export enum Terrain {
-  Arctic = 'Arctic',
-  Coast = 'Coast',
-  Desert = 'Desert',
-  Forest = 'Forest',
-  Grassland = 'Grassland',
-  Mountain = 'Mountain',
-  Swamp = 'Swamp',
-  Underground = 'Underground',
+  Arctic = 'arctic',
+  Coast = 'coast',
+  Desert = 'desert',
+  Forest = 'forest',
+  Grassland = 'grassland',
+  Mountain = 'mountain',
+  Swamp = 'swamp',
+  Underground = 'underground',
 }
 
 export const terrains: Terrain[] = [

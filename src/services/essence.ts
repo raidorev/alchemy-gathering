@@ -1,41 +1,41 @@
 import { InventoryItem, InventoryItemType } from './inventory'
 
 export type EssenceName =
-  | 'Earth'
-  | 'Fire'
-  | 'Air'
-  | 'Water'
-  | 'Ice'
-  | 'Lightning'
+  | 'earth'
+  | 'fire'
+  | 'air'
+  | 'water'
+  | 'ice'
+  | 'lightning'
 
 export const essences: InventoryItem[] = [
   {
-    code: 'Earth',
+    code: 'earth',
     type: InventoryItemType.Essence,
     baseDifficultyClass: 10,
   },
   {
-    code: 'Fire',
+    code: 'fire',
     type: InventoryItemType.Essence,
     baseDifficultyClass: 10,
   },
   {
-    code: 'Air',
+    code: 'air',
     type: InventoryItemType.Essence,
     baseDifficultyClass: 10,
   },
   {
-    code: 'Water',
+    code: 'water',
     type: InventoryItemType.Essence,
     baseDifficultyClass: 10,
   },
   {
-    code: 'Ice',
+    code: 'ice',
     type: InventoryItemType.Essence,
     baseDifficultyClass: 10,
   },
   {
-    code: 'Lightning',
+    code: 'lightning',
     type: InventoryItemType.Essence,
     baseDifficultyClass: 10,
   },

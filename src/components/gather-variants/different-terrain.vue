@@ -14,6 +14,7 @@ const props = defineProps<{
 }>()
 
 const { t } = useI18n()
+const { t: T } = useI18n({ useScope: 'global' })
 
 const otherTerrains = computed(() => {
   return terrains.filter((terrain) => terrain !== props.terrain)
@@ -54,7 +55,7 @@ const getAvailableFlora = (terrain: Terrain) => {
           <v-expansion-panel
             v-for="terrain in otherTerrains"
             :key="terrain"
-            :title="t(`terrain.${terrain}`)"
+            :title="T(`terrains.${terrain}`)"
           >
             <v-expansion-panel-text>
               <v-row dense>
@@ -68,7 +69,7 @@ const getAvailableFlora = (terrain: Terrain) => {
                     size="small"
                     @click="() => pick(flora)"
                   >
-                    {{ t(`floras["${flora.code}"]`) }}
+                    {{ T(`floras.${flora.code}`) }}
                   </v-btn>
                 </v-col>
               </v-row>
