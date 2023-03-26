@@ -1,11 +1,9 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
-import {
-  createItem,
-  InventoryItem,
-  InventoryItemType,
-} from '@/services/inventory'
+import { essences } from '@/services/essence'
+import { allFlora } from '@/services/flora'
+import { InventoryItem, InventoryItemType } from '@/services/inventory'
 import { times } from '@/utils/array'
 
 export interface InventoryStore {
@@ -62,3 +60,24 @@ export const useInventoryStore = defineStore(
     persist: true,
   },
 )
+
+function createItem(
+  code: InventoryItem['code'],
+  type: InventoryItemType,
+): InventoryItem {
+  let items: InventoryItem[]
+  if (type === InventoryItemType.Flora) {
+    items = allFlora
+  } else if (type === InventoryItemType.Essence) {
+    items = essences
+  } else {
+    throw new Error(`Unknown item type: ${type}`)
+  }
+
+  const item = items.find((item) => item.code === code)
+  if (!item) {
+    throw new Error(`Unknown item: ${code}`)
+  }
+
+  return item
+}
