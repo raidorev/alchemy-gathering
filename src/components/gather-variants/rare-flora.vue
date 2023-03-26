@@ -47,9 +47,3 @@ const flora = computed(() => {
     </v-list>
   </v-menu>
 </template>
-
-<i18n lang="json" locale="en">
-{
-  "rareFlora": "Rare Flora"
-}
-</i18n>

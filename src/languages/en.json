@@ -11,6 +11,8 @@
     "underground": "Underground"
   },
   "flora": "Flora",
+  "commonFlora": "Common flora",
+  "rareFlora": "Rare flora",
   "floras": {
     "alchemilla": "Alchemilla",
     "alil": "Alil",
